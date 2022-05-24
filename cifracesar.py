@@ -1,8 +1,7 @@
 from random import randint
 from string import ascii_lowercase as lc
 
-# key = randint(1, 25)
-key = 5
+key = randint(1, 26)                                 # VALOR DA CHAVE QUE SERÁ USADO PARA ENCRIPTAR E DECIFRAR
 
 def encryption():
     indice = 0
@@ -25,18 +24,21 @@ def decrypt():
         for letra in linha:
             if letra in lc:
                 index = lc.find(letra)
-                index = (index - key) % 26
+                index = (index - key) % 26            # CÁLCULO PARA DECIFRAR CADA CARACTERE (FAZER O REVERSO)
                 resultado += lc[index]
                 file_2 = open('plaintext.txt', 'w+')
                 file_2.write(resultado)
-    return print(file_2.read())
 
 while True:
-    mode = str(input('Qual será o modo? [enc] ou [dec]: '))
-    if mode == 'enc':
+    mode = str(input('Qual será o modo? [ENC/enc] ou [DEC/dec]: '))
+    if mode == 'enc' or mode == 'ENC':
         operacao = encryption()
         break
-    else:
+    elif mode == 'dec' or mode == 'DEC':
+        operacao = decrypt()
         break
+    else:
+        print('modo inválido, digite: "ENC" ou "enc" para encriptar e "DEC" ou "dec" para decriptar', '\n')
+        continue
 
 
