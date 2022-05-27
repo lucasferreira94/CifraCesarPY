@@ -1,7 +1,8 @@
+
 from random import randint
 from string import ascii_lowercase as lc
 
-key = randint(1, 26)                                 # VALOR DA CHAVE QUE SERÁ USADO PARA ENCRIPTAR E DECIFRAR
+key = 5                                 # VALOR DA CHAVE QUE SERÁ USADO PARA ENCRIPTAR E DECIFRAR
 
 def encryption():
     indice = 0
