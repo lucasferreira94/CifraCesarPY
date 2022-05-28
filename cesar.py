@@ -1,18 +1,16 @@
 import sys
-from string import ascii_lowercase as lc
+import calculo_cifra
 
-def help():
-    print('Modo de uso: \n'
-      'python3 cesar.py [Arquivo/Caminho do arquivo] [valor da chave] modo [enc/ENC encriptar dec/DEC decifrar] \n \n'
-      'Exemplo de encriptação: python3 cesar.py /home/documents/plaintext.txt 5 enc \n'
-      'Exemplo para decifrar: python3 cesar.py /home/documents/ciphertext.txt 5 dec')
 
-# file = open(sys.argv[1],'r').read().lower()
-# key = int(sys.argv[2])
-# mode = sys.argv[3]
-# resultado = ''
+file = open(sys.argv[1], 'r').read().lower()
+key = int(sys.argv[2])
+mode = sys.argv[3]
 
-if len(sys.argv) != 3:
-    help()
+if mode == 'enc' or mode == 'ENC':
+    calculo_cifra.encrypt(file, key)
+elif mode == 'dec' or mode == 'DEC':
+    calculo_cifra.decrypt(file, key)
+else:
+    calculo_cifra.help()
     exit(0)
 
