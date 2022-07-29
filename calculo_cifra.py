@@ -18,7 +18,7 @@ def encrypt(file, key):
                 resultado += letra
     file2 = open('ciphertext.txt', 'a+')
     file2.write(resultado)
-    file2.write(' ')
+    file2.close()
 
 
 def decrypt(file, key):
@@ -32,4 +32,4 @@ def decrypt(file, key):
                 resultado += letra
     file2 = open('plaintext.txt', 'a+')
     file2.write(resultado)
-    file2.write(' ')
+    file2.close()
