@@ -5,7 +5,8 @@ def help():
     print('Modo de uso: \n'
       'python3 cesar.py [Arquivo/Caminho do arquivo] [valor da chave] modo [enc/ENC encriptar dec/DEC decifrar] \n \n'
       'Exemplo para encriptar: python3 cesar.py /home/documents/plaintext.txt 5 enc \n'
-      'Exemplo para decifrar: python3 cesar.py /home/documents/ciphertext.txt 5 dec')
+      'Exemplo para decifrar: python3 cesar.py /home/documents/ciphertext.txt 5 dec \n'
+      'Exemplo para realizar Brute Force: python3 brute_force.py /home/documetns/ciphertext.txt')
 
 def encrypt(file, key):
     resultado = ''
