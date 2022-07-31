@@ -11,10 +11,11 @@ def encrypt(file, key):
     resultado = ''
     for linha in file:
         for letra in linha:
-            index = lc.find(letra)
-            index = (index + key) % 26
-            resultado += lc[index]
-            if letra not in lc:
+            if letra in lc:
+                index = lc.find(letra)
+                index = (index + key) % 26
+                resultado += lc[index]
+            else:
                 resultado += letra
     file2 = open('ciphertext.txt', 'a+')
     file2.write(resultado)
@@ -25,10 +26,11 @@ def decrypt(file, key):
     resultado = ''
     for linha in file:
         for letra in linha:
-            index = lc.find(letra)
-            index = (index - key) % 26
-            resultado += lc[index]
-            if letra not in lc:
+            if letra in lc:
+                index = lc.find(letra)
+                index = (index - key) % 26
+                resultado += lc[index]
+            else:
                 resultado += letra
     file2 = open('plaintext.txt', 'a+')
     file2.write(resultado)
