@@ -10,6 +10,7 @@ def help():
 
 def encrypt(file, key):
     resultado = ''
+    index = 0
     for linha in file:
         for letra in linha:
             if letra in lc:
@@ -19,12 +20,13 @@ def encrypt(file, key):
             else:
                 resultado += letra
     file2 = open('ciphertext.txt', 'a+')
-    file2.write(resultado)
+    file2.write(resultado + ' ')
     file2.close()
 
 
 def decrypt(file, key):
     resultado = ''
+    index = 0
     for linha in file:
         for letra in linha:
             if letra in lc:
@@ -34,5 +36,5 @@ def decrypt(file, key):
             else:
                 resultado += letra
     file2 = open('plaintext.txt', 'a+')
-    file2.write(resultado)
+    file2.write(resultado + ' ')
     file2.close()

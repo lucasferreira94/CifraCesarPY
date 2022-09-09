@@ -1,4 +1,3 @@
-#from distutils.log import error
 import sys
 import calculo_cifra
 
